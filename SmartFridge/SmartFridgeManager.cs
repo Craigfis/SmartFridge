@@ -28,6 +28,8 @@ namespace SmartFridge
         {
             if (CurrentItems.ContainsKey(itemUUID))
                 throw new InvalidOperationException("Item is already in the fridge");
+            if (fillFactor < 0d || fillFactor > 1.0d)
+                throw new ArgumentOutOfRangeException(nameof(fillFactor));
 
             CurrentItems.Add(itemUUID, new FridgeItem
             {

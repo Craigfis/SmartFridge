@@ -67,6 +67,34 @@ namespace SmartFridgeTests
         }
 
         [Fact]
+        public void ItemCannotHaveAFillFactorLessThanZero()
+        {
+            // Arrange
+            var sfm = new SmartFridgeManager();
+            var itemUUID = "8976";
+            var itemType = 123;
+            var itemName = "Orange Juice";
+            double fillFactor = -1.0d;
+
+            // Act & Assert
+            Assert.Throws<ArgumentOutOfRangeException>(() => sfm.HandleItemAdded(itemType, itemUUID, itemName, fillFactor));
+        }
+
+        [Fact]
+        public void ItemCannotHaveAFillFactorGreaterThanOne()
+        {
+            // Arrange
+            var sfm = new SmartFridgeManager();
+            var itemUUID = "8976";
+            var itemType = 123;
+            var itemName = "Orange Juice";
+            double fillFactor = 2.0d;
+
+            // Act & Assert
+            Assert.Throws<ArgumentOutOfRangeException>(() => sfm.HandleItemAdded(itemType, itemUUID, itemName, fillFactor));
+        }
+
+        [Fact]
         public void GetItemsForShoppingListReturnsCorrectItems_WhenFridgeHasOneItemAlmostEmpty()
         {
             // Arrange
