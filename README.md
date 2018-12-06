@@ -3,7 +3,7 @@
 		○ Hmmm, what does fillFactor mean? E.g. How full a bottle of OJ is?
 		○ Each item in the Fridge has a UUID
 	- Convert to C#
-	- Implement stub class
+	- Implement stub class. (Note, I don't like the suffix "Manager" on a class, but I'll use it here to reflect the interface naming)
 	- Create dictionary container to hold items inside  Manager
 	- What should be first test?
 		○ Add an item and remove it
@@ -28,8 +28,9 @@
 		○ What should happen if the user tries to forget an item that was not already stocked?
 			§ Again I'll opt for throwing an exception by the same reasoning above.
 		○ An item not already in the fridge cannot be removed. Throw an exception.
-    ○ Negative fill factors should not be allowed. Throw.
+		○ Negative fill factors should not be allowed. Throw.
     
 	- Other thoughts
 		○ Persistence of state. My implementation is purely memory based. A more real application would probably need some kind of more permanent backing store such that it could survive power outages for example. (Who wants to tell their fridge the contents after each blackout!?)
 		○ Performance. Given the likely frequency of fridge operations, this doesn't seem like a particularly performance critical application and I haven't tried to do any performance optimization. If this was running on a standalone device, performance is probably not critical. If however this was a web service supporting millions of fridge devices, performance would indeed become critical and justify profiling.
+		Scalability. I imagine the capacity of a fridge is generally just a few dozen items so I don't think the scalability of the SmartFridgeManager is a concern. 
