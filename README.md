@@ -34,5 +34,5 @@
 		○ Persistence of state. My implementation is purely memory based. A more real application would probably need some kind of more permanent backing store such that it could survive power outages for example. (Who wants to tell their fridge the contents after each blackout!?)
 		○ Performance. Given the likely frequency of fridge operations, this doesn't seem like a particularly performance critical application and I haven't tried to do any performance optimization. If this was running on a standalone device, performance is probably not critical. If however this was a web service supporting millions of fridge devices, performance would indeed become critical and justify profiling.
 		○ Scalability. I imagine the capacity of a fridge is generally just a few dozen items so I don't think the scalability of the SmartFridgeManager is a concern. 
-
-- Need to add a test for the scenario where we try to get the fillfactor for an item that is not present in the fridge.
+		
+	- Need to add a test for the scenario where we try to get the fillfactor for an item that is not present in the fridge.
