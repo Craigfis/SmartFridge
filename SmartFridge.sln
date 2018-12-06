@@ -5,6 +5,8 @@ VisualStudioVersion = 15.0.27703.2035
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmartFridge", "SmartFridge\SmartFridge.csproj", "{8B09EE76-BD2F-444D-B029-08DE350886BD}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmartFridgeTests", "SmartFridgeTests\SmartFridgeTests.csproj", "{907997C0-86AE-4FC0-8111-458AD964395A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{8B09EE76-BD2F-444D-B029-08DE350886BD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8B09EE76-BD2F-444D-B029-08DE350886BD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8B09EE76-BD2F-444D-B029-08DE350886BD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{907997C0-86AE-4FC0-8111-458AD964395A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{907997C0-86AE-4FC0-8111-458AD964395A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{907997C0-86AE-4FC0-8111-458AD964395A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{907997C0-86AE-4FC0-8111-458AD964395A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
