@@ -23,7 +23,13 @@ namespace SmartFridge
                 throw new InvalidOperationException("Item not present in fridge");
         }
 
-        // This method is called every time an item is stored in the fridge
+        /// <summary>
+        /// This method is called every time an item is stored in the fridge
+        /// </summary>
+        /// <param name="itemType"></param>
+        /// <param name="itemUUID"></param>
+        /// <param name="name"></param>
+        /// <param name="fillFactor"></param>
         public void HandleItemAdded(long itemType, string itemUUID, string name, double fillFactor)
         {
             if (CurrentItems.ContainsKey(itemUUID))
@@ -44,8 +50,12 @@ namespace SmartFridge
             }
         }
 
-        // Returns a list of items based on their fill factor. This method is used by the
-        // fridge to display items that are running low and need to be replenished.
+        /// <summary>
+        /// Returns a list of items based on their fill factor. This method is used by the
+        /// fridge to display items that are running low and need to be replenished.
+        /// </summary>
+        /// <param name="fillFactor"></param>
+        /// <returns>an array of arrays containing [ itemType, fillFactor ]</returns>
         public object[] GetItems(double fillFactor)
         {
             if (fillFactor < 0)
