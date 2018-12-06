@@ -270,5 +270,24 @@ namespace SmartFridgeTests
             // Assert
             Assert.Equal(ojFillFactor, actualFillFactor);
         }
+        [Fact]
+        public void GetItems_NegativeThresholdNotAllowed()
+        {
+            // Arrange
+            var sfm = new SmartFridgeManager();
+            var item1UUID = "1897";
+            var ojItemType = 123L;
+            var itemName = "Orange Juice";
+            double ojFillFactor = 0.25d;
+            sfm.HandleItemAdded(ojItemType, item1UUID, itemName, ojFillFactor);
+            var item2UUID = "2897";
+            double item2FillFactor = 1.0d;
+            var otherItemType = 333L;
+            sfm.HandleItemAdded(otherItemType, item2UUID, itemName, item2FillFactor);
+            var threshold = -1.0d;
+
+            // Act & Assert
+            Assert.Throws<ArgumentOutOfRangeException>(() => sfm.GetItems(threshold));
+        }
     }
 }

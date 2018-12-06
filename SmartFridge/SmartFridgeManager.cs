@@ -48,6 +48,9 @@ namespace SmartFridge
         // fridge to display items that are running low and need to be replenished.
         public object[] GetItems(double fillFactor)
         {
+            if (fillFactor < 0)
+                throw new ArgumentOutOfRangeException(nameof(fillFactor));
+
             var itemLevels = StockedItems
                 .Select(s =>
                     new object[]
